@@ -98,5 +98,5 @@ ENV/
 .idea/
 
 #txt file
-!requirements.txt
 *.txt
+!requirements.txt
