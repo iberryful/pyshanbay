@@ -1,8 +1,9 @@
 # pyshanbay
 Pyshanbay provides fundament tools to access shanbay(shanbay.com), including Oauth2 and a simple wrapper to build your own application.
+This package is written in Python 3.
 
 ## API usage
-* Add config file, config.json
+* Add config file, the default config file is `config.json`
 
 ```json
 {
