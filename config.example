@@ -1,0 +1,5 @@
+{
+    "redirect_uri": "http://example.com/callback?....",
+    "client_id": "xxxxxxxxx",
+    "grant_type": "authorization_code"
+}
