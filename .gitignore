@@ -94,3 +94,5 @@ ENV/
 #db file
 *.db
 
+#idea config
+.idea/
