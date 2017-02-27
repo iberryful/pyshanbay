@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#json config files
+*.json
+
+#db file
+*.db
+
