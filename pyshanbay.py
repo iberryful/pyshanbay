@@ -12,6 +12,7 @@ METHOD_MAP = {
 
 class API():
     def __init__(self, config_path="config.json"):
+        self.config_path = config_path
         self.config = self.load_config()
         print("load config success.")
         if "expires_at" not in self.config or self.config['expires_at'] < time.time():
@@ -20,12 +21,12 @@ class API():
         else:
             print("auth info found")
 
-    def load_config(self, config_path="config.json"):
-        with open(config_path, 'r') as f:
+    def load_config(self):
+        with open(self.config_path, 'r') as f:
             return json.loads(f.read())
 
-    def save_config(self, config_path="config.json"):
-        with open(config_path, 'w') as f:
+    def save_config(self):
+        with open(self.config_path, 'w') as f:
             return f.write(json.dumps(self.config, indent=4))
 
     def _make_url(self, path, *args, **kwargs):

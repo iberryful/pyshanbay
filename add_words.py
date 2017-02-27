@@ -1,4 +1,5 @@
-from shanbay import API
+import click
+from pyshanbay import API
 
 
 class WordsAdder(API):
@@ -28,6 +29,13 @@ class WordsAdder(API):
         list(map(self.add_a_word, words))
 
 
+@click.command()
+@click.option("-c", "--config", default="config.json", help="path to config file")
+@click.option("-i", "--inputs", default="kwords.txt", help="path to words file")
+def main(config, inputs):
+    wa = WordsAdder(config)
+    wa.add_words(wa.load_words(inputs))
+
+
 if __name__ == '__main__':
-    wa = WordsAdder()
-    wa.add_words(wa.load_words())
+    main()
